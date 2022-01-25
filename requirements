@@ -1,0 +1,11 @@
+Functional:
+- create timers
+- create tallies
+- save timers and tallies
+- load individual elements
+- names for each element
+UI:
+- display elements in a list
+- switch order of timer and tally elements
+- display time left
+- display original time
