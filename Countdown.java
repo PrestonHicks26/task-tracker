@@ -8,15 +8,22 @@ public class Countdown {
     int minutes;
     int seconds;
 
-    public Countdown(int hours, int minutes, int seconds){
-        hours = hours;
-        minutes = minutes;
-        seconds = seconds;
+    public Countdown(int h, int m, int s){
+        hours = h;
+        minutes = m;
+        seconds = s;
+        System.out.println(hours+":"+minutes+":"+seconds);
+    }
+    public String getTime(){
+        String time = Integer.toString(hours)+":"+Integer.toString(minutes)+":"+Integer.toString(seconds);
+        return time;
     }
     public void start() throws InterruptedException {
         boolean run = true;
         while(run){
             Thread.sleep(1000);
+            if(seconds == 0 && minutes == 0 && hours == 0)
+                break;
             if(seconds == 0){
                 seconds = 59;
                 if(minutes == 0){
@@ -32,8 +39,8 @@ public class Countdown {
             }else{
                 seconds--;
             }
+            System.out.println(hours+":"+minutes+":"+seconds);
         }
-        //play beeping noise
     }
 }
 
